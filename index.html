@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Store House</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main class="mx-20">
+      <section>
+        <div class="text-center pt-5">
+          <h1 class="text-5xl pb-8 font-semibold">Phone Hunting Store</h1>
+          <input
+            id="search-phone"
+            type="text"
+            placeholder="search"
+            class="input w-full max-w-xs"
+          />
+          <button onclick="handleSearchButton()" class="btn btn-primary">
+            Search
+          </button>
+        </div>
+        <div id="loading-spinner" class="text-center mt-9 hidden">
+          <span class="loading loading-spinner loading-lg"></span>
+        </div>
+        <div class="mt-6" id="not-found"></div>
+        <div id="phone-container" class="grid md:grid-cols-3 gap-6 mt-10"></div>
+
+        <!-- Open the modal using ID.showModal() method -->
+        
+        <dialog id="show_details_modal" class="modal">
+          <div  class="modal-box">
+
+            <div id="show-details">
+
+            </div>
+            
+              <form method="dialog" class="text-center">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn mt-3">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+
+        <div id="show-all" class="text-center mt-8 hidden">
+          <button onclick="handleShowAllButton()" class="btn btn-primary">
+            Show All
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="js/phone_store.js"></script>
+  </body>
+</html>
